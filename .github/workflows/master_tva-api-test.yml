@@ -18,17 +18,17 @@ jobs:
     - name: Set up Python version
       uses: actions/setup-python@v1
       with:
-        python-version: '3.7'
+        python-version: '3.6'
 
     - name: Build using AppService-Build
       uses: azure/appservice-build@v1
       with:
         platform: python
-        platform-version: '3.7'
+        platform-version: '3.6'
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'tva-api-test'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_be7802b0fd5f4f53be4b98299402a433 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_423bf2bc53c945ac8ee62a14dba7fcfb }}
